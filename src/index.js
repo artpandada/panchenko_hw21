@@ -43,9 +43,7 @@ function createOrder(order, callbackDone) {
                 count++;
 
                 if (count === order.length) {
-                    callbackDone();
-                    // callbackDone(result);
-                    //второй вариант
+                    callbackDone(result);
                     clearTimeout(id);
 
                 }
@@ -70,14 +68,11 @@ function createOrder(order, callbackDone) {
 
     });
 
-    return result;
-
 
 }
 
-const done = createOrder(menu.burgerMenu, () => alert(done));
 
-// createOrder(menu.burgerMenu,(result)=> console.log(result));
-//второй вариант
+createOrder(menu.burgerMenu, (result) => alert(result));
+
 
 
